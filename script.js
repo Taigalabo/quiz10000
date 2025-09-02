@@ -37,8 +37,8 @@ const questionElements = [
     document.getElementById('q4')
 ];
 
-// 現在表示されている文字の数を追跡します。初期値は1です。
-let currentCharIndex = 1;
+// 現在表示されている文字の数を追跡します。初期値は4です。
+let currentCharIndex = 4;
 
 // すべての問題文のパターンの中で最も短いものの長さを計算します。
 function getMinLength() {
@@ -88,4 +88,5 @@ function backward() {
 
 // ページが読み込まれたときに、最初の1文字を表示します。
 updateQuestions();
+
 
