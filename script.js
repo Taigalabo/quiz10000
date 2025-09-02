@@ -77,7 +77,13 @@ function forward() {
         updateQuestions();
     }
 }
-
+// 新しい「5文字進む」ボタンの関数です。
+function forwardFive() {
+    const minLength = getMinLength();
+    // 現在の文字数に5を足し、それが最大文字数を超えないように調整します。
+    currentCharIndex = Math.min(currentCharIndex + 5, minLength);
+    updateQuestions();
+}
 // 「戻る」ボタンがクリックされたときに実行される関数です。
 function backward() {
     if (currentCharIndex > 1) {
@@ -88,5 +94,6 @@ function backward() {
 
 // ページが読み込まれたときに、最初の1文字を表示します。
 updateQuestions();
+
 
 
