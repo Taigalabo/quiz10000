@@ -1,72 +1,42 @@
 <!DOCTYPE html>
-<html lang="ja-JP">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="キャラ固定ではないので、意思疎通をとって可能な範囲内で強い編成を考えるのが楽しいランダマイザーです。キャラ持ちが少ない方にもおすすめ。">
-    <meta name="data" content="2024-12-12">
-    <title>原神ランダマイザー（緩めver.）</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
-
+    <title>プログレッシブクイズ</title>
+    <style>
+        body { font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; padding: 20px; }
+        .question-container { margin-bottom: 20px; }
+        .question-text { display: inline-block; width: 70%; }
+        .change-btn { margin-left: 10px; padding: 5px 10px; font-size: 16px; cursor: pointer; }
+        .nav-btn { margin: 10px 5px; padding: 10px 20px; font-size: 16px; cursor: pointer; }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="content">
 
-            <h1>原神ランダマイザー（緩めver.）</h1>
+    <h1>4つの問題</h1>
 
-            <p>キャラ固定ではないので、意思疎通をとって可能な範囲内で強い編成を考えるのが楽しいランダマイザーです。キャラ持ちが少ない方にもおすすめ。　※基本料理使用禁止、縛りの内容は個人の判断に任せます</p>
-            <p>最終更新：原神 ver. 5.2</p>
-            
-            <!--
-            <div>
-                <input type="radio" id="easy" name="level" value="easy" checked />
-                <label for="easy">通常</label>
-            </div>
-            <div>
-                <input type="radio" id="medium" name="level" value="medium" />
-                <label for="medium">中間</label>
-            </div>
-            <div>
-                <input type="radio" id="hard" name="level" value="hard" />
-                <label for="hard">地獄</label>
-            </div>
-            -->
-
-            <button class="executer">ランダマイズ！</button>
-            
-            <table id="dataTable">
-                <tbody>
-                    <!-- JSON data will be inserted here -->
-                </tbody>
-            </table>
-            
-            <p>参考程度に：難易度が低すぎると感じたら、以下の縛りを追加してみても面白いかもしれません。</p>
-            
-            <table id="dataTable2">
-                <tbody>
-                    <!-- JSON data will be inserted here -->
-                </tbody>
-            </table>
-
-          
-            <a href="./data.json">表示縛りリスト</a>
-
-            <br>
-            <br>
-            <br>
-            <br>
-
-            <p>本プログラムはれいじい氏の「<a href="https://docs.google.com/spreadsheets/d/1OSNBF7jOywGReE0lzNi7EmO-XgfzSGvc">ランダムガチャ4.5
-            </a>」を参考にタイラが作成しました。</p>
-            
-            <br>
-
-            <footer>
-                <p>&copy; 2024 taila</p>
-            </footer>
-        </div>
+    <div class="question-container">
+        <p id="q1" class="question-text"></p>
+        <button class="change-btn" onclick="nextQuestionPattern(0)">＋</button>
     </div>
+    <div class="question-container">
+        <p id="q2" class="question-text"></p>
+        <button class="change-btn" onclick="nextQuestionPattern(1)">＋</button>
+    </div>
+    <div class="question-container">
+        <p id="q3" class="question-text"></p>
+        <button class="change-btn" onclick="nextQuestionPattern(2)">＋</button>
+    </div>
+    <div class="question-container">
+        <p id="q4" class="question-text"></p>
+        <button class="change-btn" onclick="nextQuestionPattern(3)">＋</button>
+    </div>
+
+    <button class="nav-btn" onclick="backward()">戻る</button>
+    <button class="nav-btn" onclick="forward()">進む</button>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
